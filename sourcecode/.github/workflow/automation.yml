@@ -9,8 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, app_automate_a]
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
