@@ -1,29 +1,32 @@
 name: App_automation_a
 
 on:
-   workflow_dispatch:
-   push:
-     branches: 
-      - main
+  workflow_dispatch:
 
-# schedule: 
-#   - cron : '30 01 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on : app_automate_a
+    runs-on: [self-hosted, app_automate_a]
 
-      steps:
-        - name: Checkout code
-             uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-        - name: install dependencies
-          run: | 
-            pip install -r requirements.txt
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-        - name: Run automation tests
-          run: |
-            pytest -v --html=reports/report.html --self-contained-html
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run automation tests
+        run: |
+          pytest -v --html=reports/report.html --self-contained-html
 
    
 
