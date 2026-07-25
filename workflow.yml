@@ -11,19 +11,19 @@ on:
 
 jobs:
   build:
-    runs-on : annu_app_automation
+    runs-on : app_automate_a
 
-steps:
-  -name: Checkout code
-   uses: actions/checkout@v4
+      steps:
+        - name: Checkout code
+             uses: actions/checkout@v4
 
-  -name: install dependencies
-  run: | 
-     pip -r install requirements.txt
+        - name: install dependencies
+          run: | 
+            pip install -r requirements.txt
 
-  - name: Run automation tests
-  run: |
-      pytest -v --html=reports/report.html --self-contained-html
+        - name: Run automation tests
+          run: |
+            pytest -v --html=reports/report.html --self-contained-html
 
    
 
