@@ -1,11 +1,11 @@
-name: App_automation_a
+name: portal_automation_a
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu_latest
+    runs-on: [self-hosted, app_automation]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
