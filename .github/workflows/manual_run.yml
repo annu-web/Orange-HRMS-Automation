@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: app_automation
+    runs-on: ubuntu_latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
