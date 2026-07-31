@@ -22,7 +22,7 @@ jobs:
       - name: Run automation tests
         run: |
 
-          pytest -v admin.y --html=reports/report.html --self-contained-html
+          pytest -v admin.py --html=reports/report.html --self-contained-html
 
    
 
